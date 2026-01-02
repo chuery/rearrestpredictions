@@ -1,9 +1,9 @@
 
-#Introduction 
+# Introduction 
 Pretrial detention decisions carry serious consequences for both individuals and society. Traditionally, judges have relied on their discretion and experience to determine whether a defendant should be detained or released before trial. In recent years, there has been growing interest in using data-driven algorithms to support these decisions—particularly in predicting the likelihood of rearrest. These tools offer the potential for greater consistency and a reduction in individual biases, but they also raise complex and important questions about fairness. This project explores how accurately we can predict rearrest using data available at arraignment, and how fairness can be defined and achieved across different demographic groups. 
 Fairness in this context is a nuanced issue, with multiple competing definitions.Although algorithms can mitigate some forms of human bias, they are not inherently fair. Ensuring fairness requires thoughtful consideration of how fairness is defined, the quality and limitations of available data, and how model outputs are interpreted. Two major challenges arise in this work: defining what fairness means in practice, and choosing an appropriate threshold for classifying individuals as high risk based on their predicted probability of rearrest.
 
-#Data Processing 
+# Data Processing 
 To prepare the dataset for modeling, I began by addressing missing values. For both numeric and categorical variables, I used the most frequent value imputation strategy to preserve the structure of the data without aggressive methods like mean or median imputation. I also created a new binary feature, felony_charge, to indicate whether the current charge was classified as a felony, capturing a key aspect of the severity of the alleged offense. I dropped the judge_name column and one-hot encoded categorical variables such as charge, charge_severity, and charge_weight. 
 I conducted a Principal Component Analysis (PCA) on the preprocessed dataset to explore the underlying structure of the features and assess dimensionality. 
 Figure 1: Principal Component Analysis 
